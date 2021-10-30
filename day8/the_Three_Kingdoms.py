@@ -1,7 +1,9 @@
 import mysql.connector
 
-# 创建数据库连接对象
+# 创建数据库连接
 conn = mysql.connector.connect(user='root', password='hzj522zy.', database='company')
+
+# 初始化数据库连接对象
 cursor = conn.cursor()
 
 # 查询出部门编号为30的所有员工
@@ -88,4 +90,6 @@ cursor.execute('select job,max(sal),min(sal) from t_employees group by job')
 values = cursor.fetchall()
 print('查询每种工作的最高工资、最低工资、人数')
 print(values)
+
+# 关闭连接
 cursor.close()
