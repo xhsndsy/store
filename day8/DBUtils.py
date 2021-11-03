@@ -1,14 +1,14 @@
-import mysql.connector
+import pymysql
 
 host = "localhost"
 user = "root"
-pwd = "root"
+pwd = "hzj522zy."
 database = "bank"
 
 
 # 针对增，删，改
 def update(sql, param):
-    con = mysql.connect(host=host, user=user, password=pwd, database=database)
+    con = pymysql.connect(host=host, user=user, password=pwd, database=database)
 
     cursor = con.cursor()
     cursor.execute(sql, param)
@@ -20,7 +20,7 @@ def update(sql, param):
 
 #
 def select(sql, param, mode="all", size=0):
-    con = mysql.connect(host=host, user=user, password=pwd, database=database)
+    con = pymysql.connect(host=host, user=user, password=pwd, database=database)
 
     cursor = con.cursor()
     cursor.execute(sql, param)

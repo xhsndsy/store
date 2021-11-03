@@ -37,7 +37,7 @@ def bankadd(account, name, password, country, province, steert, door):
             "bank_name": bank_name
         }
         return 1
-
+1
 
 # 定义用户入参
 def useradd():
