@@ -96,6 +96,7 @@ class ICBC:
         self.set_door(door)
         self.set_street(street)
         self.set_country(country)
+        self.set_province(province)
         self.set_account()
         self.set_password(password)
 
@@ -109,10 +110,10 @@ class ICBC:
 
         if data[0] >= 100:
             return 3
-        elif len(data) >= 1:
+        elif len(data) > 1:
             return 2
         else:
-            param = [self.get_name(), self.get_account(), self.set_password(), self.get_country(), self.get_province(),
+            param = [self.get_name(), self.get_account(), self.get_password(), self.get_country(), self.get_province(),
                      self.get_street(), self.get_door(), 0, self.bank_name]
             DBUtils.update('insert into user values (%s, %s, %s, %s, %s, %s, %s, %s, %s)', param)
             return 1
@@ -156,8 +157,8 @@ class ICBC:
             sql = 'select * from user where name = %s'
             param = [name]
             data = DBUtils.select(sql, param)
-            for i in data:
-                print(i)
+            print(info % (
+                data[0][0], data[0][1], data[0][3], data[0][4], data[0][5], data[0][6], data[0][7], data[0][8]))
             return 1
 
     # 存钱
