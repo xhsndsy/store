@@ -8,7 +8,7 @@ print(os.environ)
 
 # 查看当前目录的绝对路径
 print(os.path.abspath('.'))
-print(os.path.abspath('../../all_sort_test.py'))
+print(os.path.abspath('../../day13/all_sort_test.py'))
 
 # 在某个目录下创建新目录，然后把文件目录完整表示
 print(os.path.join('.', '123'))
