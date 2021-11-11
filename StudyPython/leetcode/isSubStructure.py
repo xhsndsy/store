@@ -7,3 +7,4 @@ class TreeNode:
 
 class Solution:
     def isSubStructure(self, A: TreeNode, B: TreeNode) -> bool:
+    
